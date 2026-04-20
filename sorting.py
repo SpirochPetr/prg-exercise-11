@@ -31,15 +31,15 @@ def bubble_sort(values):
         swapped = False
 
         for j in range(0, n - i - 1):
-            index_highlight1 = j
-            index_highlight2 = j + 1
+            index_1 = j
+            index_2 = j + 1
 
-            colors = ["steelblue"] * len(values)
-            colors[index_highlight1] = "tomato"
-            colors[index_highlight2] = "tomato"
+            barva = ["steelblue"] * len(values)
+            barva[index_1] = "tomato"
+            barva[index_2] = "tomato"
 
             plt.clf()
-            plt.bar(range(len(values)), values, color=colors)
+            plt.bar(range(len(values)), values, color=barva)
             plt.title("Bubble Sort")
             plt.pause(0.1)
 

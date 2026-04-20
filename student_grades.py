@@ -1,4 +1,6 @@
+
 class StudentsGrades:
+    ###
     def __init__(self, scores):
         self.scores = scores
 
@@ -7,6 +9,9 @@ class StudentsGrades:
 
     def count(self):
         return len(self.scores)
+    ###
+
+    ###get_grade############################
 
     def get_grade(self, index):
         score = self.get_by_index(index)
@@ -24,6 +29,8 @@ class StudentsGrades:
         else:
             return "F"
 
+    ###find##########################
+
     def find(self, value):
         result = []
 
@@ -32,6 +39,8 @@ class StudentsGrades:
                 result.append(i)
 
         return result
+
+    ###get_sorted#######################
 
     def get_sorted(self):
         scores = self.scores.copy()
@@ -44,24 +53,21 @@ class StudentsGrades:
 
         return scores
 
+###main#################################################################
 
 def main():
     results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
 
     print(results.count())
     print(results.get_by_index(2))
-
     print(results.get_grade(2))
     print(results.get_grade(6))
     print(results.get_grade(7))
-
     print(results.find(100))
     print(results.find(50))
     print(results.find(77))
-
     print(results.get_sorted())
     print(results.scores)
-
 
 if __name__ == "__main__":
     main()
