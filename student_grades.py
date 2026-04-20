@@ -71,9 +71,9 @@ class StudentsGrades:
             if ps[prumer] == score:
                 return prumer
             elif ps[prumer] < score:
-                left = prumer + 1
+                leva = prumer + 1
             else:
-                right = prumer - 1
+                prava = prumer - 1
 
         return None
 
