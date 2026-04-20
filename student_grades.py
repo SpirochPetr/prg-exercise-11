@@ -3,6 +3,7 @@ class StudentsGrades:
     ###
     def __init__(self, scores):
         self.scores = scores
+        self._sorted_scores = None
 
     def get_by_index(self, index):
         return self.scores[index]
@@ -50,8 +51,31 @@ class StudentsGrades:
             for j in range(0, n - i - 1):
                 if scores[j] > scores[j + 1]:
                     scores[j], scores[j + 1] = scores[j + 1], scores[j]
-
         return scores
+
+    ###bonus#######################################
+
+    def find_sorted(self, score):
+
+        if self._sorted_scores is None:
+            print("sorting…")
+            self._sorted_scores = self.get_sorted()
+
+        ps = self._sorted_scores
+        leva = 0
+        prava = len(ps) - 1
+
+        while leva <= prava:
+            prumer = (leva + prava) // 2
+
+            if ps[prumer] == score:
+                return prumer
+            elif ps[prumer] < score:
+                left = prumer + 1
+            else:
+                right = prumer - 1
+
+        return None
 
 ###main#################################################################
 
